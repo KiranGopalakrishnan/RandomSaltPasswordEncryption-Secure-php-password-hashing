@@ -1,0 +1,43 @@
+<?php
+
+/*Class Written By Kiran Gopalakrishnan[14-12-2015]
+ *This is a class for generating secure randomly hashed passwords 
+ * the salt is generated randomly.
+ * you can get the salt using the getSalt() fuunction.
+ * example :
+ * include 'class.hashing.php';
+ * $ob = new hashing($pass);
+ * $ob->generateHash();
+ * $result=$ob->getResult;
+ * $salt=$ob->getSalt();
+ * 
+ */
+class hashing{
+    private $password;
+    private $salt;
+    private $result;
+    function hashing($password){
+        $this->password=$password;
+    }
+    public function generateHash(){
+        $password = $pass;
+        // A higher "cost" is more secure but consumes more processing power
+        $cost = 10;
+        // Create a random salt
+        $salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
+        // Prefix information about the hash so PHP knows how to verify it later.
+        // "$2a$" Means we're using the Blowfish algorithm. The following two digits are the cost parameter.
+        $salt = sprintf("$2a$%02d$", $cost) . $salt;
+        //echo strval($salt);
+        $this->salt;
+        $hash = crypt($password, $salt);
+        $this->result=$hash;
+    }
+    public function getResult(){
+        return $this->result;
+    }
+    public function getSalt(){
+        return $this->salt;
+    }
+}
+?>

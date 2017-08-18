@@ -3,7 +3,7 @@
 /*Class Written By Kiran Gopalakrishnan[14-12-2015]
  *This is a class for generating secure randomly hashed passwords 
  * the salt is generated randomly.
- * you can get the salt using the getSalt() fuunction.
+ * you can get the salt using the getSalt() function.
  * example :
  * include 'class.hashing.php';
  * $ob = new hashing($pass);

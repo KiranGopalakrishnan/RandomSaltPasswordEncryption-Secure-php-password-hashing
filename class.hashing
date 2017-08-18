@@ -1,6 +1,6 @@
 <?php
 
-/*Class Written By Kiran Gopalakrishnan[14-12-2015]
+/* Class Written By Kiran Gopalakrishnan[14-12-2012]
  *This is a class for generating secure randomly hashed passwords 
  * the salt is generated randomly.
  * you can get the salt using the getSalt() function.
